@@ -1,0 +1,11 @@
+node_modules/
+dist/
+work/
+test-results/
+playwright-report/
+.DS_Store
+*.zip
+*.crx
+*.pem
+.env
+.env.*

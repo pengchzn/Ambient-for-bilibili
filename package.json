@@ -1,0 +1,20 @@
+{
+  "name": "ambient-light-for-bilibili",
+  "version": "1.0.0",
+  "private": true,
+  "description": "哔哩哔哩实时氛围光 Chrome 扩展",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/core.test.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "check": "node scripts/check.cjs",
+    "package": "node scripts/package.cjs",
+    "assets": "node scripts/assets.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Ambient light for Bilibili™",
+  "description": "让视频的色彩实时延伸到哔哩哔哩播放器周围。支持暗色页面、黑边检测、平滑过渡和全屏。",
+  "version": "1.0.0",
+  "minimum_chrome_version": "111",
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "128": "icons/128.png",
+    "48": "icons/48.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Ambient light for Bilibili™"
+  },
+  "options_ui": {
+    "page": "popup.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "toggle-ambient": {
+      "suggested_key": {
+        "default": "Alt+Shift+A"
+      },
+      "description": "开关 Ambient light for Bilibili™"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.bilibili.com/*",
+        "https://live.bilibili.com/*",
+        "https://player.bilibili.com/*"
+      ],
+      "js": [
+        "config.js",
+        "core.js",
+        "player-adapter.js",
+        "comments-adapter.js",
+        "projector-shadow.js",
+        "renderer.js",
+        "settings-ui.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}

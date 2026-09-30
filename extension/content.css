@@ -1,0 +1,63 @@
+.bili-ambient-root { position:fixed!important; inset:0!important; z-index:0!important; pointer-events:none!important; overflow:hidden!important; contain:strict; opacity:1; }
+.bili-ambient-root[hidden] { display:none!important; }
+.bili-ambient-canvas { position:absolute!important; pointer-events:none!important; max-width:none!important; max-height:none!important; }
+body.bili-ambient-page { isolation:isolate; --bili-ambient-card-rgb:255,255,255; --bili-ambient-card:rgba(var(--bili-ambient-card-rgb),var(--bili-ambient-content-opacity,.55)); --bili-ambient-input:rgba(var(--bili-ambient-card-rgb),.32); }
+body.bili-ambient-page > #app, body.bili-ambient-page > .app, body.bili-ambient-page > #biliMainHeader { position:relative; z-index:1; }
+body.bili-ambient-page :is(#app,.video-container-v1,.video-container,.left-container,.right-container) { background-color:transparent!important; }
+body.bili-ambient-dark { background:#101117!important; color:#e2e5ee!important; color-scheme:dark; --bili-ambient-card-rgb:21,24,32; }
+html.bili-ambient-dark {
+  --bg1: #151820; --bg2: #202430; --bg3: #303646; --bg1_float:#202430;
+  --text1:#e9edf5; --text2:#b8c1d4; --text3:#8792a8; --line_regular:#ffffff1a;
+  --line_light:#ffffff10; --graph_bg_regular:#202430; --graph_bg_thin:#202430;
+  --BA0:#101117; --Ga0:#151820; --Ga1:#202430; --Ga2:#303646;
+}
+body.bili-ambient-dark :is(#app,.video-container-v1,.video-container,.left-container,.right-container,.main-container,.media-info,.media-wrapper,.player-section,.playlist-container) { background-color:transparent!important; }
+body.bili-ambient-dark :is(.video-title,.video-info-title,.up-name,.title,.video-desc,.basic-desc-info,.desc-info-text,.stat-item,.tag-link,.reply-item,.room-title) { color:#e2e5ee!important; }
+body.bili-ambient-dark :is(.live-room-app,.room-info-ctnr) { background-color:var(--bili-ambient-card)!important; color:#dfe6f5!important; }
+body.bili-ambient-dark :is(.video-tag,.video-toolbar,.video-info,.video-desc-container,.video-desc) { border-color:#ffffff18!important; }
+/* Bilibili fusion selectors adapted from iceorange-dev/bilibili-ambilight (MIT).
+ * Copyright (c) 2026 iceorange-dev (Bilibili port). See LICENSE for retained MIT notices.
+ */
+body.bili-ambient-blendHeader :is(.bili-header__bar,.mini-header) { background:var(--bili-ambient-card)!important; backdrop-filter:blur(20px) saturate(1.3); box-shadow:0 4px 28px #0003; transition:background .2s,opacity .2s; }
+body.bili-ambient-blendHeader.bili-ambient-at-top :is(.bili-header__bar,.mini-header) { background:transparent!important; backdrop-filter:none; box-shadow:none; }
+body.bili-ambient-blendHeader #nav-searchform:not(.is-focus) { background:var(--bili-ambient-input)!important; border:1px solid var(--line_regular,#ffffff26); }
+body.bili-ambient-hide-header :is(.bili-header__bar,.mini-header):not(:hover):not(:focus-within) { opacity:0; }
+body.bili-ambient-blendSidebar :is(#danmukuBox .danmaku-wrap,.danmaku-box,.video-pod,.video-sections-content) { background:var(--bili-ambient-card)!important; border-color:var(--line_regular,#ffffff26)!important; }
+body.bili-ambient-blendSidebar #danmukuBox :is(.bpx-docker-minor,.bui-collapse-header,.bui-collapse-body,.bpx-player-dm-function,.bpx-player-dm-wrap) { background:transparent!important; }
+body.bili-ambient-blendSidebar :is(.bpx-player-dm-btn-history,.simple-base-item.active,.video-pod__item.active,.rcmd-tab .rec-footer,.video-pod .subscribe-btn.subscribed,.video-tag-container .tag-panel .tag-link) { background:var(--bili-ambient-input)!important; border-color:var(--line_regular,#ffffff26)!important; }
+body.bili-ambient-blendSidebar .video-resource-list { --bg1:var(--bili-ambient-card); }
+body.bili-ambient-blendDanmaku .bpx-player-sending-area::before { background:transparent!important; }
+body.bili-ambient-blendDanmaku .bpx-player-sending-bar { background:transparent!important; color:var(--text1,#e2e5ee)!important; }
+body.bili-ambient-blendDanmaku .bpx-player-video-inputbar { background:var(--bili-ambient-input)!important; border-color:var(--line_regular,#ffffff26)!important; }
+body.bili-ambient-blendDanmaku .bpx-player-dm-btn-send.bui-disabled .bui-button-blue { background:var(--bili-ambient-input)!important; color:var(--text3,#8792a8)!important; }
+/* The comments component inherits these across its Shadow DOM. Keep login masks opaque. */
+body.bili-ambient-blendComments bili-comments { --bg1:rgb(var(--bili-ambient-card-rgb)); --bg3:var(--bili-ambient-input); --Ga1:var(--line_regular,#ffffff26); --bili-comment-textarea-bg:transparent; }
+/* Custom-scroll layouts teleport this wrapper into the light DOM instead. */
+body.bili-ambient-blendComments .bili-comments-bottom-fixed-wrapper > div { background-color:var(--bili-ambient-card)!important; backdrop-filter:blur(18px) saturate(1.15); border-top:1px solid var(--line_regular,#ffffff1a)!important; border-radius:12px 12px 0 0; box-shadow:0 -6px 24px #0002; }
+body.bili-ambient-blendComments .bili-comments-bottom-fixed-wrapper bili-comment-box { --bg1:rgba(var(--bili-ambient-card-rgb),.48); --bg3:rgba(var(--bili-ambient-card-rgb),.24); --Ga1:var(--line_regular,#ffffff26); }
+body.bili-ambient-textShadow :is(.video-title,.video-info-title,.basic-desc-info,.desc-info-text,.stat-item,.room-title,.bpx-player-sending-bar) { text-shadow:0 1px 3px #0007; }
+body.bili-ambient-dark.bili-ambient-textShadow :is(.bili-header__bar,.mini-header) { text-shadow:0 1px 3px #000a; }
+.bili-ambient-surface { background-color:transparent!important; }
+.bili-ambient-surface > .bpx-player-video-perch, .bili-ambient-surface > .bilibili-player-video-wrap { position:relative; z-index:1; }
+.bili-ambient-in-fullscreen { background:#101117; }
+.bili-ambient-menu-anchor { position:relative; }
+#bili-ambient-settings { position:absolute!important; right:12px!important; bottom:56px!important; top:auto!important; width:min(320px,calc(100% - 24px)); z-index:2147483646!important; display:block; color-scheme:dark; }
+#bili-ambient-settings.bili-ambient-menu-fullscreen { bottom:86px!important; }
+#bili-ambient-settings.bili-ambient-menu-floating { position:fixed!important; right:18px!important; bottom:70px!important; width:min(320px,calc(100vw - 24px)); }
+#bili-ambient-settings[hidden] { display:none!important; }
+#bili-ambient-launcher { appearance:none; position:relative; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; width:36px; height:22px; border:0!important; border-radius:0; background:transparent!important; color:#fff!important; cursor:pointer; padding:0!important; margin:0; line-height:22px; vertical-align:top; }
+#bili-ambient-launcher :is(.bpx-player-ctrl-btn-icon,.bpx-common-svg-icon) { display:flex; align-items:center; justify-content:center; width:22px; height:22px; margin:0; }
+#bili-ambient-launcher svg { display:block; width:100%; height:100%; overflow:visible; }
+/* Native glyphs use opaque white fill with one opacity layer; avoid dimming currentColor a second time. */
+#bili-ambient-launcher .bpx-common-svg-icon { opacity:.9; }
+#bili-ambient-launcher:is(:hover,:focus-visible,[aria-expanded=true]) .bpx-common-svg-icon { opacity:1; }
+#bili-ambient-launcher[data-enabled=false] .bili-ambient-rays { opacity:.3; }
+#bili-ambient-launcher.bili-ambient-large { width:54px; height:32px; line-height:32px; }
+#bili-ambient-launcher.bili-ambient-large :is(.bpx-player-ctrl-btn-icon,.bpx-common-svg-icon) { width:28px; height:28px; }
+#bili-ambient-launcher.bili-ambient-floating { position:fixed; right:18px; bottom:22px; width:40px; height:40px; border-radius:50%; background:#1c1c1ce6!important; z-index:2147483645; box-shadow:0 4px 18px #0005; }
+#bili-ambient-launcher:focus-visible { outline:2px solid #fff; outline-offset:3px; border-radius:4px; }
+.bili-ambient-tooltip { display:block; position:absolute; bottom:calc(100% + 12px); left:50%; transform:translateX(-50%); padding:6px 9px; border-radius:4px; background:#1c1c1ce6; color:#fff; white-space:nowrap; font:12px/1.4 system-ui,sans-serif; opacity:0; pointer-events:none; }
+#bili-ambient-launcher:is(:hover,:focus-visible):not([aria-expanded=true]) .bili-ambient-tooltip { opacity:1; }
+.bili-ambient-menu-open :is(.bpx-player-control-bottom,.bpx-player-control-mask,.bpx-player-control-top) { opacity:1!important; visibility:visible!important; }
+#bili-ambient-stats { position:fixed; bottom:16px; left:16px; z-index:2147483644; pointer-events:none; color:#b6e2ff; background:#101724e8; border-radius:7px; padding:7px 10px; font:12px/1.6 ui-monospace,monospace; }
+#bili-ambient-stats[hidden] { display:none!important; }

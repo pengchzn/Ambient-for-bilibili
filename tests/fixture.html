@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>哔哩氛围光 · 测试播放器</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font:14px/1.6 system-ui;background:#fafafa;color:#242631}header{height:64px;padding:16px 38px;display:flex;gap:28px;border-bottom:1px solid #8882}.brand{font-weight:700;color:#62cfff}#app{max-width:1200px;margin:auto;padding:32px 24px}.columns{display:grid;grid-template-columns:800px 1fr;gap:32px}h1{font-size:22px;margin:0 0 8px}.meta{color:#8b95ab;margin-bottom:20px}.bpx-player-container{position:relative;width:800px}.bpx-player-video-area{position:relative;background:#000;width:100%;height:450px;overflow:hidden}.bpx-player-video-perch{height:100%}.bpx-player-video-wrap{height:100%}video{width:100%;height:100%;object-fit:contain;display:block}.bpx-player-control-bottom-right{background:#161c28;color:#e4ebfc;padding:8px;display:flex;justify-content:flex-end;align-items:center}button{cursor:pointer}.description{margin:24px 0;line-height:2}.card{background:#ffffffb0;border:1px solid #8882;border-radius:10px;padding:18px;margin:0 0 16px}.thumbnail{height:115px;border-radius:8px;background:linear-gradient(135deg,#20bee7,#334087 55%,#d48d79);margin-bottom:12px}.bpx-state-web{position:fixed;inset:0;width:100%;height:100%;z-index:100}.bpx-state-web .bpx-player-video-area{height:calc(100vh - 48px)}.bpx-player-container:fullscreen{width:100%;height:100%;background:#101117}.bpx-player-container:fullscreen .bpx-player-video-area{height:calc(100% - 48px)}
+</style></head><body>
+<header class="mini-header"><span class="brand">bilibili</span><span>首页</span><span>番剧</span><span>直播</span><span>哔哩氛围光 · 本地验证</span></header>
+<main id="app"><div class="columns"><section><h1 class="video-title">让画面延伸到屏幕之外 · 氛围光预览</h1><div class="meta">自动生成的测试画面 · 实时视频取帧 · 无网络视频资源</div>
+<div class="bpx-player-container" id="player"><div class="bpx-player-video-area"><div class="bpx-player-video-perch"><div class="bpx-player-video-wrap"><video muted playsinline></video></div></div></div><div class="bpx-player-control-bottom-right"><span style="margin-right:auto">▶ &nbsp; 00:42 / 03:18 &nbsp; 弹幕 &nbsp; ━━━━━━━━━</span><button class="bpx-player-ctrl-setting" aria-label="播放器设置" style="border:0;background:transparent;color:#fff;width:32px;height:32px;font-size:23px">⚙</button><button id="web">网页全屏</button><button id="full">全屏</button></div></div>
+<div class="description"><strong>光随画面流动，播放器与页面融为一体。</strong><br>多层投射 · 黑边检测 · WebGL 渲染 · 中文设置<br><span class="meta">本页用于扩展自动化验证，界面模拟哔哩哔哩播放器结构。</span></div></section>
+<aside><div class="card"><strong>接下来播放</strong><div class="thumbnail"></div>从海面到城市，跟随色彩旅行</div><div class="card"><div class="thumbnail" style="background:linear-gradient(135deg,#ec924e,#913c7f,#172b61)"></div>夜色里的光，正在慢慢展开</div><div class="card">预览使用合成画面，实际氛围光来自你正在观看的视频。</div></aside></div></main>
+<script>
+const source=document.createElement('canvas');source.width=640;source.height=360;
+const ctx=source.getContext('2d'); window.demo={hue:0,bars:false,static:false,t:0};
+function paint(){if(demo.freeze){requestAnimationFrame(paint);return;}const t=demo.static?0:performance.now()/4000;demo.t=t;
+ctx.save();ctx.filter=`hue-rotate(${demo.hue}deg)`;
+const sky=ctx.createLinearGradient(0,0,640,180);sky.addColorStop(0,'#18c3de');sky.addColorStop(.5,'#2465e3');sky.addColorStop(1,'#d27cce');ctx.fillStyle=sky;ctx.fillRect(0,0,640,180);
+ctx.fillStyle='#283d68';ctx.beginPath();ctx.moveTo(0,220);ctx.lineTo(90,100);ctx.lineTo(230,230);ctx.lineTo(320,140);ctx.lineTo(480,230);ctx.lineTo(640,155);ctx.lineTo(640,360);ctx.lineTo(0,360);ctx.fill();
+const sea=ctx.createLinearGradient(0,200,640,360);sea.addColorStop(0,'#13b9d8');sea.addColorStop(.5,'#1f719d');sea.addColorStop(1,'#e29158');ctx.fillStyle=sea;ctx.fillRect(0,220,640,140);
+ctx.strokeStyle='#91e6ff77';ctx.lineWidth=2;for(let i=0;i<12;i++){ctx.beginPath();ctx.moveTo(0,235+i*11);ctx.bezierCurveTo(200,220+i*11+Math.sin(t+i)*12,420,250+i*11,640,230+i*11);ctx.stroke();}
+ctx.fillStyle='#f8e3b6';ctx.beginPath();ctx.arc(500+Math.sin(t)*12,85,28,0,Math.PI*2);ctx.fill();
+ctx.restore();if(demo.bars){ctx.fillStyle='#000';ctx.fillRect(0,0,640,40);ctx.fillRect(0,320,640,40);}if(demo.flat){ctx.fillStyle=demo.flat;ctx.fillRect(0,0,640,360);}if(demo.split){ctx.fillStyle='#f00';ctx.fillRect(0,0,320,360);ctx.fillStyle='#00f';ctx.fillRect(320,0,320,360);}requestAnimationFrame(paint);}paint();
+window.startVideo=async(v=document.querySelector('video'))=>{v.srcObject=source.captureStream(30);v.muted=true;await v.play();};startVideo();
+document.getElementById('web').onclick=()=>document.getElementById('player').classList.toggle('bpx-state-web');
+document.getElementById('full').onclick=()=>document.getElementById('player').requestFullscreen();
+</script></body></html>
