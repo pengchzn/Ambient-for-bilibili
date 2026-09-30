@@ -20,8 +20,9 @@ assert(manifest.description.length<=132);assert.equal(manifest.host_permissions,
 function pngInfo(file){const b=fs.readFileSync(file);assert.equal(b.subarray(1,4).toString(),'PNG');return {width:b.readUInt32BE(16),height:b.readUInt32BE(20),colorType:b[25]};}
 for(const [size,icon] of Object.entries(manifest.icons))assert.deepEqual(Object.values(pngInfo(path.join(root,icon))).slice(0,2),[Number(size),Number(size)]);
 for(const [file,width,height] of [['assets/promo-440x280.png',440,280],['screenshots/01-web-fullscreen.png',1280,800],['screenshots/02-settings.png',1280,800],['screenshots/03-comments.png',1280,800]]) {
-  const image=path.join(project,'store',file);if(!fs.existsSync(image))continue;
+  const image=path.join(project,'dist/store-materials',file);if(!fs.existsSync(image))continue;
   const info=pngInfo(image);assert.equal(info.width,width,file);assert.equal(info.height,height,file);
   if(!file.includes('icon'))assert.equal(info.colorType,2,`Store image must be opaque RGB: ${file}`);
 }
-console.log('版本与锁文件一致；现有商店图片尺寸和 RGB 格式检查通过。');
+assert(fs.existsSync(path.join(project,'PRIVACY.md')),'Missing privacy policy');
+console.log('版本与锁文件一致；隐私政策、图标及可用的本地商店图片检查通过。');

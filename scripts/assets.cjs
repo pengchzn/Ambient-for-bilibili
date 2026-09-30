@@ -1,7 +1,7 @@
 // Render the repository's vector artwork using an isolated browser; no remote assets.
 const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.BILI_PLAYWRIGHT_MODULE||'playwright');
-const root=path.resolve(__dirname,'..'),output=path.join(root,'store/assets');fs.mkdirSync(output,{recursive:true});
+const root=path.resolve(__dirname,'..'),output=path.join(root,'dist/store-materials/assets');fs.mkdirSync(output,{recursive:true});
 (async()=>{
  const browser=await chromium.launch({headless:true,executablePath:process.env.BILI_CHROMIUM_EXECUTABLE||undefined});
  try {

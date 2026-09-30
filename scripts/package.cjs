@@ -4,10 +4,10 @@ const root=path.resolve(__dirname,'..');require('./check.cjs');
 const version=JSON.parse(fs.readFileSync(path.join(root,'extension/manifest.json'))).version;
 const dist=path.join(root,'dist'),stage=fs.mkdtempSync(path.join(require('node:os').tmpdir(),'ambient-for-bilibili-'));
 fs.mkdirSync(dist,{recursive:true});
-const legal=['LICENSE'];
+const legal=['LICENSE','PRIVACY.md'];
 const copy=(name,target)=>fs.cpSync(path.join(root,name),path.join(target,name),{recursive:true});
-const required=['extension','README.md','README.en.md','LICENSE','package.json','package-lock.json','.gitignore'];
-const optional=['scripts','tests','docs','store','.github'];
+const required=['extension','README.md','README.en.md','LICENSE','PRIVACY.md','package.json','package-lock.json','.gitignore'];
+const optional=['scripts','tests','docs','.github'];
 const list=[...required,...optional.filter(name=>fs.existsSync(path.join(root,name)))];
 const specs=[
   {kind:'store',dir:path.join(stage,'store'),populate:dir=>{fs.cpSync(path.join(root,'extension'),dir,{recursive:true});legal.forEach(n=>copy(n,dir));},manifest:'manifest.json',prefix:''},

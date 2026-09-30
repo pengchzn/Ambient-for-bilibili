@@ -9,3 +9,4 @@ playwright-report/
 *.pem
 .env
 .env.*
+store/

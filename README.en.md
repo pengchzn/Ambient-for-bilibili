@@ -28,6 +28,8 @@ Requires Chrome 111 or later. The extension is under review in the Chrome Web St
 
 Keep the loaded directory in place. To update, replace its files, reload the extension on `chrome://extensions/`, then refresh Bilibili. Existing settings are retained.
 
+See the [Privacy Policy](PRIVACY.md) for details about local data processing.
+
 ## Credits and license
 
 [MIT](LICENSE).
