@@ -6,7 +6,7 @@ const dist=path.join(root,'dist'),stage=fs.mkdtempSync(path.join(require('node:o
 fs.mkdirSync(dist,{recursive:true});
 const legal=['LICENSE'];
 const copy=(name,target)=>fs.cpSync(path.join(root,name),path.join(target,name),{recursive:true});
-const required=['extension','README.md','README.zh-CN.md','LICENSE','package.json','package-lock.json','.gitignore'];
+const required=['extension','README.md','README.en.md','LICENSE','package.json','package-lock.json','.gitignore'];
 const optional=['scripts','tests','docs','store','.github'];
 const list=[...required,...optional.filter(name=>fs.existsSync(path.join(root,name)))];
 const specs=[
