@@ -1,8 +1,8 @@
-# Ambient light for Bilibili™
+# Ambient light for Bilibili
 
 [English](README.en.md)
 
-因为觉得 [Ambient light for YouTube™](https://github.com/WesselKroos/youtube-ambilight) 的视觉效果很好看，我把这种氛围光体验迁移到了哔哩哔哩，做成 **Ambient light for Bilibili™**。项目沿用其开源投射与渐隐算法，并针对 B 站播放器和页面布局做了适配。
+因为觉得 [Ambient light for YouTube](https://github.com/WesselKroos/youtube-ambilight) 的视觉效果很好看，我把这种氛围光体验迁移到了哔哩哔哩，做成 **Ambient light for Bilibili**。项目沿用其开源投射与渐隐算法，并针对 B 站播放器和页面布局做了适配。
 
 让视频色彩延伸到播放器周围，向下浏览评论时也保留全页氛围光。适用于 Chrome 的 Manifest V3 扩展。
 

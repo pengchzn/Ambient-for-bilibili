@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Ambient light for Bilibili™",
+  "name": "Ambient light for Bilibili",
   "description": "让视频的色彩实时延伸到哔哩哔哩播放器周围。支持暗色页面、黑边检测、平滑过渡和全屏。",
   "version": "1.0.0",
   "minimum_chrome_version": "111",
@@ -15,7 +15,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Ambient light for Bilibili™"
+    "default_title": "Ambient light for Bilibili"
   },
   "options_ui": {
     "page": "popup.html",
@@ -29,7 +29,7 @@
       "suggested_key": {
         "default": "Alt+Shift+A"
       },
-      "description": "开关 Ambient light for Bilibili™"
+      "description": "开启或关闭氛围光"
     }
   },
   "content_scripts": [

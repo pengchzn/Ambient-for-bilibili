@@ -8,7 +8,7 @@
   A.createLauncher=()=> {
     const button=document.createElement('button');button.id='bili-ambient-launcher';button.type='button';
     button.className='bpx-player-ctrl-btn';
-    button.setAttribute('aria-label','Ambient light for Bilibili™ 设置');button.setAttribute('aria-haspopup','dialog');
+    button.setAttribute('aria-label','Ambient light for Bilibili 设置');button.setAttribute('aria-haspopup','dialog');
     button.setAttribute('aria-controls','bili-ambient-settings');button.setAttribute('aria-expanded','false');
     const icon=document.createElement('span');icon.className='bpx-player-ctrl-btn-icon';
     const wrapper=document.createElement('span');wrapper.className='bpx-common-svg-icon';

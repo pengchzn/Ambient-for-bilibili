@@ -1,8 +1,8 @@
-# Ambient light for Bilibili™
+# Ambient light for Bilibili
 
 [简体中文](README.md)
 
-I loved how [Ambient light for YouTube™](https://github.com/WesselKroos/youtube-ambilight) looks, so I brought that ambient lighting experience to Bilibili. **Ambient light for Bilibili™** adapts its open-source projection and fade algorithms to Bilibili's player and page layout.
+I loved how [Ambient light for YouTube](https://github.com/WesselKroos/youtube-ambilight) looks, so I brought that ambient lighting experience to Bilibili. **Ambient light for Bilibili** adapts its open-source projection and fade algorithms to Bilibili's player and page layout.
 
 A Chrome Manifest V3 extension that projects video colors around the player and keeps full-page ambient lighting visible while you browse comments.
 

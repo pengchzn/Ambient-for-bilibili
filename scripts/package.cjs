@@ -13,7 +13,7 @@ const specs=[
   {kind:'store',dir:path.join(stage,'store'),populate:dir=>{fs.cpSync(path.join(root,'extension'),dir,{recursive:true});legal.forEach(n=>copy(n,dir));},manifest:'manifest.json',prefix:''},
   {kind:'unpacked',dir:path.join(stage,'unpacked'),populate:dir=>{
     ['extension',...legal].forEach(n=>copy(n,dir));
-    fs.writeFileSync(path.join(dir,'README.txt'),`Ambient light for Bilibili™ ${version}\n\nOpen chrome://extensions/, enable Developer mode, choose Load unpacked and select extension/. Refresh Bilibili.\n\n打开 chrome://extensions/，启用开发者模式，选择加载已解压的扩展程序，加载 extension/ 文件夹，然后刷新 B 站。\n\nPreferences stay in chrome.storage.local. Video pixels and page layout are processed locally in memory; no data is uploaded. Uninstalling removes local preferences.\n\nMIT license and upstream copyright notices: LICENSE.\n`);
+    fs.writeFileSync(path.join(dir,'README.txt'),`Ambient light for Bilibili ${version}\n\nOpen chrome://extensions/, enable Developer mode, choose Load unpacked and select extension/. Refresh Bilibili.\n\n打开 chrome://extensions/，启用开发者模式，选择加载已解压的扩展程序，加载 extension/ 文件夹，然后刷新 B 站。\n\nPreferences stay in chrome.storage.local. Video pixels and page layout are processed locally in memory; no data is uploaded. Uninstalling removes local preferences.\n\nMIT license and upstream copyright notices: LICENSE.\n`);
   },manifest:'extension/manifest.json',prefix:'extension/'},
   {kind:'source',dir:path.join(stage,'source'),populate:dir=>{const p=path.join(dir,'Ambient-for-bilibili');fs.mkdirSync(p,{recursive:true});list.forEach(n=>copy(n,p));},manifest:'Ambient-for-bilibili/extension/manifest.json',prefix:'Ambient-for-bilibili/extension/'}
 ];

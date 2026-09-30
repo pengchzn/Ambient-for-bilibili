@@ -32,10 +32,10 @@
   };
   A.createSettingsUI = (host, settings, onChange, onClose) => {
     const shadow=host.attachShadow({mode:'open'});
-    const style=element('style',css), panel=element('section',null,{class:'panel','aria-label':'Ambient light for Bilibili™ 设置'});
+    const style=element('style',css), panel=element('section',null,{class:'panel','aria-label':'Ambient light for Bilibili 设置'});
     shadow.append(style,panel);
     const header=element('header'), title=element('div');
-    title.append(element('h1','Ambient light for Bilibili™'));
+    title.append(element('h1','Ambient light for Bilibili'));
     header.append(title); panel.append(header);
     if(onClose) { const close=element('button','×',{'aria-label':'关闭设置',class:'close'}); close.addEventListener('click',onClose); header.append(close); }
     const status=element('div','正在寻找播放器…',{class:'status',role:'status','aria-live':'polite'});

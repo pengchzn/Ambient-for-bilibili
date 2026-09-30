@@ -13,7 +13,7 @@
       this.launcher.addEventListener('click',event=>{event.stopPropagation();this.togglePanel();});
       this.launcher.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' ')event.stopPropagation();});
       this.host=document.createElement('div'); this.host.id='bili-ambient-settings'; this.host.hidden=true;
-      this.host.setAttribute('role','dialog'); this.host.setAttribute('aria-label','Ambient light for Bilibili™ 设置');
+      this.host.setAttribute('role','dialog'); this.host.setAttribute('aria-label','Ambient light for Bilibili 设置');
       this.ui=A.createSettingsUI(this.host,settings,A.writeSettings,()=>this.togglePanel(false));
       // Prevent player click/keyboard shortcuts while interacting with the menu.
       for(const type of ['click','pointerdown','keydown','wheel'])this.host.addEventListener(type,event=>event.stopPropagation());
@@ -368,6 +368,6 @@
         if(message?.type!=='bili-ambient-status')return;
         respond({message:controller.message,frames:controller.frames,renderer:controller.renderer?.type||null});
       });
-    } catch(error) { console.warn('[Ambient light for Bilibili™] 初始化失败',error.message); }
+    } catch(error) { console.warn('[Ambient light for Bilibili] 初始化失败',error.message); }
   })();
 })();

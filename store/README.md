@@ -10,8 +10,9 @@
 | `../extension/icons/128.png` | 128×128 商店图标，主体 96×96、透明留白 |
 | `assets/promo-440x280.png` | 必需的小宣传图 |
 | `screenshots/01-web-fullscreen.png` | 1280×800，真实 B 站网页全屏 |
-| `screenshots/02-settings.png` | 1280×800，真实 B 站设置面板 |
 | `screenshots/03-comments.png` | 1280×800，真实 B 站滚动背景（未登录） |
+
+设置面板截图和 README 图片的商店尺寸版本仅保留在本地 `dist/store-screenshots/`，不纳入 Git 仓库。
 
 上传 `dist/ambient-light-for-bilibili-1.0.0-store.zip`，手动安装包为 `ambient-light-for-bilibili-1.0.0.zip`，不是商店上传包。安装包由 `npm run package` 生成，ZIP 根目录直接包含 `manifest.json`。
 

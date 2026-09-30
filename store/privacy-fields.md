@@ -49,7 +49,7 @@ Video pixels, playback state, relevant page structure/layout and the current Bil
 
 ## 隐私说明（可公开使用）
 
-Ambient light for Bilibili™ 在本机处理当前 B 站页面的播放路由、视频像素、播放状态和相关 DOM 布局，仅用于生成氛围光及定位控件；不读取账号 Cookie、密码或评论正文，不记录观看历史。视频像素与渲染缓存只在当前页面会话的内存中处理，不保存为录像或截图。
+Ambient light for Bilibili 在本机处理当前 B 站页面的播放路由、视频像素、播放状态和相关 DOM 布局，仅用于生成氛围光及定位控件；不读取账号 Cookie、密码或评论正文，不记录观看历史。视频像素与渲染缓存只在当前页面会话的内存中处理，不保存为录像或截图。
 
 用户偏好保存在浏览器的 chrome.storage.local 中，不同步或上传。扩展没有服务器、遥测或广告，也不向开发者或第三方传输、出售数据。卸载扩展会删除其本地设置；用户主动导出的 JSON 文件需单独删除。禁用或卸载后刷新页面即可停止本地处理。
 

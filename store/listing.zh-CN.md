@@ -2,7 +2,7 @@
 
 ## 名称
 
-Ambient light for Bilibili™
+Ambient light for Bilibili
 
 与 `extension/manifest.json` 保持一致。
 
@@ -14,7 +14,7 @@ Ambient light for Bilibili™
 
 让画面色彩延伸到播放器之外。
 
-Ambient light for Bilibili™ 根据正在播放的 B 站视频生成柔和的动态背景。观看视频时，光效围绕播放器展开；向下浏览评论时，背景色彩继续铺满页面，让视频与页面更自然地融为一体。
+Ambient light for Bilibili 根据正在播放的 B 站视频生成柔和的动态背景。观看视频时，光效围绕播放器展开；向下浏览评论时，背景色彩继续铺满页面，让视频与页面更自然地融为一体。
 
 主要功能：
 • 实时视频取色与多层扩散，支持 WebGL 和 Canvas 2D。
