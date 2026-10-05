@@ -19,7 +19,11 @@ A Chrome Manifest V3 extension that projects video colors around the player and 
 
 ## Install and update
 
-Requires Chrome 111 or later. The extension is under review in the Chrome Web Store.
+Requires Chrome 111 or later.
+
+The extension is now available on the [Chrome Web Store](https://chromewebstore.google.com/detail/ambient-light-for-bilibil/djmkdikdbnlhflpoiliflicijdeppcie). Click **Add to Chrome** to install it and receive automatic updates through Chrome. Refresh your Bilibili video page after installation.
+
+**Manual installation (optional)**
 
 1. Download this repository, or download `ambient-light-for-bilibili-1.0.0.zip` from a release and extract it.
 2. Open `chrome://extensions/` and enable **Developer mode**.

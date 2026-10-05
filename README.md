@@ -20,7 +20,11 @@
 
 ## 安装与更新
 
-需要 Chrome 111 或更新版本。Chrome 扩展商店审核中。
+需要 Chrome 111 或更新版本。
+
+扩展已上架 [Chrome 应用商店](https://chromewebstore.google.com/detail/ambient-light-for-bilibil/djmkdikdbnlhflpoiliflicijdeppcie)，点击「添加至 Chrome」即可安装，后续由 Chrome 自动更新。安装后刷新 B 站视频页即可使用。
+
+**手动安装（可选）**
 
 1. 下载本仓库，或下载 Release 中的 `ambient-light-for-bilibili-1.0.0.zip` 并解压。
 2. 打开 `chrome://extensions/`，启用「开发者模式」。
